@@ -11,4 +11,4 @@ wall "  #Architecture: `uname -srvmo`
         #Connections TCP : `grep 'TCP' /proc/net/sockstat | awk '{print $3}'` ESTABLISHED
         #User log: `who | wc -l`
         #Network: IP `hostname -I | awk '{print $1}'` (`ip link | grep 'link/ether' | awk '{print $2}'`)
-        #Sudo : `grep 'COMMAND' /var/log/sudo/sudo.log | wc -l`"
+        #Sudo : `grep 'COMMAND' /var/log/sudo/sudo.log | wc -l` cmd"
