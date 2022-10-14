@@ -7,7 +7,7 @@ wall "  #Architecture: `uname -srvmo`
         #Disk Usage: `df -h --total | grep 'total' | awk '{print $3}'`/`df -h --total | grep 'total' | awk '{print $2}'` `df -h --total | grep 'total' | awk '{print $5}'`
         #CPU load:
         #Last boot: `who -b | awk '{print $3 " " $4}`
-        #LVM use:
+        #LVM use: `if [$() -eq 0]; then echo 'no'; else echo 'yes'; fi`
         #Connections TCP : `grep 'TCP' /proc/net/sockstat | awk '{print $3}'` ESTABLISHED
         #User log: `who | wc -l`
         #Network: IP `hostname -I | awk '{print $1}'` (`ip link | grep 'link/ether' | awk '{print $2}'`)
