@@ -21,8 +21,8 @@ nbSudo=`grep 'COMMAND' /var/log/sudo/sudo.log | wc -l`
 wall "  #Architecture: $Archi
         #CPU physical : $pCPU
         #vCPU : $vCPU
-        #Memory Usage: $memoryUses/$totalMemory $memoryPercentage
-        #Disk Usage: $diskUses/$totalDisk ($diskPercentage)
+        #Memory Usage: $memoryUses/$totalMemory MB $memoryPercentage 
+        #Disk Usage: $diskUses/$totalDisk Gb ($diskPercentage)
         #CPU load: $cpuLoad
         #Last boot: $lastBootDate
         #LVM use: $isLvmUse
