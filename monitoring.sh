@@ -17,12 +17,14 @@ nbUserLog=`who | wc -l`
 ipAdress=`hostname -I | awk '{print $1}'`
 macAdress=`ip link | grep 'link/ether' | awk '{print $2}'`
 nbSudo=`grep 'COMMAND' /var/log/sudo/sudo.log | wc -l`
+MB='MB'
+Gb='Gb'
 
 wall "  #Architecture: $Archi
         #CPU physical : $pCPU
         #vCPU : $vCPU
-        #Memory Usage: $memoryUses/$totalMemory'MB' $memoryPercentage 
-        #Disk Usage: $diskUses/$totalDisk'Gb' ($diskPercentage)
+        #Memory Usage: $memoryUses/$totalMemory$MB $memoryPercentage 
+        #Disk Usage: $diskUses/$totalDisk$Gb ($diskPercentage)
         #CPU load: $cpuLoad
         #Last boot: $lastBootDate
         #LVM use: $isLvmUse
