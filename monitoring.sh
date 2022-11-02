@@ -6,8 +6,8 @@ vCPU=`grep 'processor' /proc/cpuinfo | wc -l`
 memoryUses=`free --mega | grep Mem | awk '{print $3}'`
 totalMemory=`free --mega | grep Mem | awk '{print $2}'`
 memoryPercentage=`free --mega | grep Mem | awk '{printf("(%.2f%%)"), $2 / ($3 * 100)}'`
-diskUses=`df -h --total | grep 'total' | awk '{print $3}'`
-totalDisk=`df -h --total | grep 'total' | awk '{print $2}'`
+diskUses=`df -h --total | grep 'total' | awk '{print $3}' | sed "s/G//g"`
+totalDisk=`df -h --total | grep 'total' | awk '{print $2}' | sed "s/G//g"`
 diskPercentage=`df -h --total | grep 'total' | awk '{print $5}'`
 cpuLoad=`top -bn1 | grep '^%Cpu' | awk '{printf("%.1f%%"), $2 + $4}'`
 lastBootDate=`who -b | awk '{print $3 " " $4}'`
@@ -21,8 +21,8 @@ nbSudo=`grep 'COMMAND' /var/log/sudo/sudo.log | wc -l`
 wall "  #Architecture: $Archi
         #CPU physical : $pCPU
         #vCPU : $vCPU
-        #Memory Usage: $memoryUses/$totalMemory MB $memoryPercentage 
-        #Disk Usage: $diskUses/$totalDisk Gb ($diskPercentage)
+        #Memory Usage: $memoryUses/$totalMemory'MB' $memoryPercentage 
+        #Disk Usage: $diskUses/$totalDisk'Gb' ($diskPercentage)
         #CPU load: $cpuLoad
         #Last boot: $lastBootDate
         #LVM use: $isLvmUse
