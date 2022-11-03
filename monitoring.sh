@@ -16,7 +16,7 @@ nbTcp=`grep 'TCP' /proc/net/sockstat | awk '{print $3}'`
 nbUserLog=`who | wc -l`
 ipAdress=`hostname -I | awk '{print $1}'`
 macAdress=`ip link | grep 'link/ether' | awk '{print $2}'`
-nbSudo=`grep 'COMMAND' /var/log/sudo/sudo.log | wc -l`
+nbSudo=`grep --text 'COMMAND' /var/log/sudo/sudo.log | wc -l`
 MB='MB'
 Gb='Gb'
 
