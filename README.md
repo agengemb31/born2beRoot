@@ -3,7 +3,7 @@
 </div>
   
 # born2beRoot
-
+  
 Basics of system administration, including:
 - Installing and configuring a virtual machine.
 - Partitioning schemes with LVM (logical volume management).
